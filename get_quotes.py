@@ -1,10 +1,9 @@
-import pandas as pd
 import requests
+import pandas as pd
 import numpy as np
 import json
 import time
 import os
-
 
 user = os.environ['USERPROFILE']
 filePath = os.path.join(os.path.join(user, "Documents"), "daily_quotes.xlsx")
