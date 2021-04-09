@@ -4,7 +4,7 @@ pipeline{
     stages {
         stage('Checkout Code') {
             steps {
-                bat 'python --version'
+                sh 'python --version'
             }
         }
     }
