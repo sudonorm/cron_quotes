@@ -11,7 +11,7 @@ pipeline{
         stage('Create VirtualEnv') {
             steps {
                 bat 'python --version' // Add Python path to system environment variable 
-                bat 'python pip install virtualenv'
+                bat 'pip install virtualenv'
                 bat 'virtualenv venv'
                 bat 'echo "set-up done" '
             }
