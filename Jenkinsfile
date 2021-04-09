@@ -8,22 +8,25 @@ pipeline{
             }
         }
 
-        stage('check Python version') {
+        stage('Create VirtualEnv') {
             steps {
-                bat 'python --version'
+                bat 'python --version' // Add Python path to system environment variable 
+                bat 'python pip install virtualenv'
+                bat 'virtualenv venv'
+                bat 'echo "set-up done" '
             }
         }
 
-        stage('check pip') {
+        stage('Get Quotes') {
             steps {
                 bat 'pip -V'
             }
         }
     }
 
-    post {
-        always {
-                cleanWs()
-                }
-	}
+    //post {
+    //    always {
+     //           cleanWs()
+     //           }
+	//}
 }
