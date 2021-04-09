@@ -6,9 +6,13 @@ pipeline{
             steps {
                 bat 'python --version'
             }
+
+            steps {
+                bat 'pip -V'
+            }
         }
     }
-    
+
     post {
         always {
                 cleanWs()
