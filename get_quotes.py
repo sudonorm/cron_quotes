@@ -4,6 +4,7 @@ import numpy as np
 import json
 import time
 import os
+import argparse
 
 def get_quote():
     user = os.environ['USERPROFILE']
@@ -48,4 +49,9 @@ def get_quote():
     #     daily_quotes.to_excel(filePath, index=False)
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-u", "--user", action='append')
+    
+    user = parser.parse_args()
+    print("user is: " + user)
     get_quote()
