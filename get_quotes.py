@@ -52,6 +52,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("user", action='store')
     
-    user = parser.parse_args()
-    print("user is: " + user)
+    args = parser.parse_args()
+    print("user is: " + args.user)
     get_quote()
