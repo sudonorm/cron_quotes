@@ -19,7 +19,8 @@ pipeline{
 
         stage('Get Quotes') {
             steps {
-                bat 'venv/bin/activate'
+                bat 'cd venv/Scripts'
+                bat 'activate'
                 bat 'python get_quotes.py'
                 bat 'echo "file run" '
             }
