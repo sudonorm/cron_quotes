@@ -26,7 +26,7 @@ pipeline{
                         bat "echo Started By: '${jobUserName}'"
 
                         bat 'venv/Scripts/activate'
-                        bat 'python get_quotes.py user '${jobUserName}''
+                        bat 'python get_quotes.py -user '${jobUserName}''
                         bat 'echo "file run" '
 
                         }
