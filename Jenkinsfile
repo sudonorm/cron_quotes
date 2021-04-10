@@ -1,7 +1,9 @@
 pipeline{
     agent any
-    // options([pipelineTriggers([cron('0 9 * * *')]) ]) // Run script everyday at 9am 
-
+    
+    triggers {
+        cron('H 9 * * *') // Run script everyday at 9am 
+    }
     stages {
         stage('Checkout Code') {
             steps {
