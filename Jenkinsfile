@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    properties([
+            pipelineTriggers([cron('0 9 * * *')]), // Run script everyday at 9am 
+			])
 
     stages {
         stage('Checkout Code') {

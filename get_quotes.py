@@ -13,7 +13,10 @@ def get_quote(userName = ""):
     print(filePath)
     tagIds = []
 
-    daily_quotes = pd.read_excel(filePath)
+    try:
+        daily_quotes = pd.read_excel(filePath)
+    except:
+        daily_quotes = pd.DataFrame(columns=["id", "day", "author", "quote", "tagId"])
 
     if len(daily_quotes) == 0:
         fid = 1
