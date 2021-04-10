@@ -7,8 +7,8 @@ import os
 import argparse
 
 def get_quote(userName = ""):
-    userPath = r"C:\\Users\\" + userName
-    
+
+    userPath = os.path.join("C:\\Users\\" , userName[1:-1])
     filePath = os.path.join(os.path.join(userPath, "Documents"), "daily_quotes.xlsx")
     print(filePath)
     # tagIds = []
