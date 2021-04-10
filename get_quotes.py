@@ -7,8 +7,9 @@ import os
 import argparse
 
 def get_quote(userName = ""):
-    user =  os.path.join("C:\\Users\\", userName)
-    filePath = os.path.join(os.path.join(user, "Documents"), "daily_quotes.xlsx")
+    userPath = r"C:\\Users\\" + userName
+    
+    filePath = os.path.join(os.path.join(userPath, "Documents"), "daily_quotes.xlsx")
     print(filePath)
     # tagIds = []
 
@@ -53,6 +54,6 @@ if __name__ == "__main__":
     parser.add_argument("-u", "--user", action='store')
 
     args = parser.parse_args()
-    user = args.user
-    print("user is: " + user)
-    get_quote(user)
+    userName = args.user
+    print("user is: " + userName)
+    get_quote(userName)
