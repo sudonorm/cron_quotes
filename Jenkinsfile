@@ -27,7 +27,7 @@ pipeline{
 
                         bat 'venv/Scripts/activate'
                         
-                        bat ('python get_quotes.py -u $jobUserName')
+                        bat "python get_quotes.py -u ${jobUserName}"
                         bat 'echo "file run"'
 
                         }
