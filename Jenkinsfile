@@ -22,7 +22,7 @@ pipeline{
                 //wrap([$class: 'BuildUser']) {
                 //    def jobUserName = "${BUILD_USER}"
                // }
-                bat 'Started By: "${BUILD_USER}"'
+                bat 'echo Started By: "${BUILD_USER}"'
 
                 bat 'venv/Scripts/activate'
                 //bat 'activate'
