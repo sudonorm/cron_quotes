@@ -22,16 +22,16 @@ pipeline{
                 script {
                     wrap([$class: 'BuildUser']) {
                         def jobUserName = "${BUILD_USER}"
+
+                        bat "echo Started By: '${jobUserName}'"
+
+                        bat 'venv/Scripts/activate'
+                        bat 'python get_quotes.py'
+                        bat 'echo "file run" '
+
                         }
                 }
-                bat 'echo Started By: "${BUILD_USER}"'
-
-                bat 'venv/Scripts/activate'
-                //bat 'activate'
-                //bat 'cd ..'
-                //bat 'cd ..'
-                bat 'python get_quotes.py'
-                bat 'echo "file run" '
+                
             }
         }
     }
