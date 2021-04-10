@@ -52,7 +52,6 @@ def get_quote(userName = ""):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-u", "--user", action='store')
-
     args = parser.parse_args()
     userName = args.user
     print("user is: " + userName)
