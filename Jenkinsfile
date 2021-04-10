@@ -21,6 +21,8 @@ pipeline{
             steps {
                 bat 'cd venv/Scripts'
                 bat 'activate'
+                bat 'cd ..'
+                bat 'cd ..'
                 bat 'python get_quotes.py'
                 bat 'echo "file run" '
             }
