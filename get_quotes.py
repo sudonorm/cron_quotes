@@ -6,8 +6,8 @@ import time
 import os
 import argparse
 
-def get_quote():
-    user = os.environ['USERPROFILE']
+def get_quote(userName = ""):
+    user =  os.path.join("C:\\Users\\", userName)
     filePath = os.path.join(os.path.join(user, "Documents"), "daily_quotes.xlsx")
     print(filePath)
     # tagIds = []
@@ -55,4 +55,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     user = args.user
     print("user is: " + user)
-    get_quote()
+    get_quote(user)
