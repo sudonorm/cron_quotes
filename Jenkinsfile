@@ -19,6 +19,11 @@ pipeline{
 
         stage('Get Quotes') {
             steps {
+                wrap([$class: 'BuildUser']) {
+                    def jobUserName = "${BUILD_USER}"
+                }
+                bat "Started By: ${jobUserName}"
+
                 bat 'venv/Scripts/activate'
                 //bat 'activate'
                 //bat 'cd ..'
