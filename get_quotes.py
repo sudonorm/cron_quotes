@@ -50,7 +50,7 @@ def get_quote():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-user", action='store')
+    parser.add_argument("-u", "--user", action='store')
 
     args = parser.parse_args()
     user = args.user
