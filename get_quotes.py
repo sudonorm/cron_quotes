@@ -18,7 +18,7 @@ def get_quote(userName = ""):
     tagIds = []
 
     print("Initializing file...")
-    
+
     try:
         daily_quotes = pd.read_excel(filePath)
     except:
@@ -63,5 +63,5 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-u", "--user", action='store')
     args = parser.parse_args()
-    userName = args.user
-    get_quote(userName)
+    # userName = args.user
+    get_quote(args.user)
