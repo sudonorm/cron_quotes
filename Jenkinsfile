@@ -2,12 +2,12 @@ pipeline{
     agent any
     
     triggers {
-        cron('16 12 * * *') // Run script everyday at 9am 
+        cron('H 8 * * *') // Run script everyday at 9am 
     }
     stages {
         stage('Checkout Code') {
             steps {
-                bat 'echo "code checked out" '
+                bat 'echo "code checked out" ' // this stage can be used if "pipeline with SCM" is not selected while setting up the job
             }
         }
 
@@ -27,10 +27,8 @@ pipeline{
                     withCredentials([string(credentialsId: 'job-username', variable: 'jobUserName')]) {
 
                         bat 'echo Started By: %jobUserName%'
-
                         bat 'venv/Scripts/activate'
-                       
-                        bat 'python get_quotes.py -u %jobUserName%'
+                        bat 'python get_quotes.py -u %jobUserName%' // run python script with the username as an input
                         bat 'echo "file run"'
 
                         }
@@ -42,7 +40,7 @@ pipeline{
  
     post {
         always {
-                cleanWs()
+                cleanWs() // clean up workspace
             }
 	    }
 }

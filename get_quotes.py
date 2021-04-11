@@ -7,6 +7,10 @@ import os
 import argparse
 
 def get_quote(userName = ""):
+    '''
+        This function, used as an input to a Jenkins cron job, runs daily in order to get a quote from an api and save to a file.
+        Note that the current userPath assumes the OS environment is Windows.
+    '''
 
     userPath = os.path.join("C:\\Users\\" , userName)
     filePath = os.path.join(os.path.join(userPath, "Documents"), "daily_quotes.xlsx")
