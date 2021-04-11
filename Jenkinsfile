@@ -23,13 +23,13 @@ pipeline{
         stage('Get Quotes') {
             steps {
                 script {
-                    wrap([$class: 'BuildUser']) {
-                        def jobUserName = "${BUILD_USER}"
+                    
+                    withCredentials([string(credentialsId: 'job-username', variable: 'jobUserName')]) {
 
                         bat "echo Started By: '${jobUserName}'"
 
                         bat 'venv/Scripts/activate'
-                        
+                       
                         bat "python get_quotes.py -u ${jobUserName}"
                         bat 'echo "file run"'
 
