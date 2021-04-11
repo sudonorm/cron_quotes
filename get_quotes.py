@@ -14,9 +14,11 @@ def get_quote(userName = ""):
 
     userPath = os.path.join("C:\\Users\\" , userName)
     filePath = os.path.join(os.path.join(userPath, "Documents"), "daily_quotes.xlsx")
-    print(filePath)
+
     tagIds = []
 
+    print("Initializing file...")
+    
     try:
         daily_quotes = pd.read_excel(filePath)
     except:
@@ -55,11 +57,11 @@ def get_quote(userName = ""):
         daily_quotes = daily_quotes.append({"id": fid, "day": time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime()), "author": auth, "quote": qte, "tagId": tagId}, ignore_index=True)
         print("Saving file...")
         daily_quotes.to_excel(filePath, index=False)
+        print("File saved!")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-u", "--user", action='store')
     args = parser.parse_args()
     userName = args.user
-    print("user is: " + userName)
     get_quote(userName)
