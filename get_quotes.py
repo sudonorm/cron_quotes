@@ -8,7 +8,7 @@ import argparse
 
 def get_quote(userName = ""):
     '''
-        This function, used as an input to a Jenkins cron job, runs daily in order to get a quote from an api and save to a file.
+        This function, used as an input in a Jenkins cron job, runs daily in order to get a quote from an api and save to a file.
         Note that the current userPath assumes the OS environment is Windows.
     '''
 
