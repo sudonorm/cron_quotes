@@ -64,4 +64,5 @@ if __name__ == "__main__":
     parser.add_argument("-u", "--user", action='store')
     args = parser.parse_args()
     # userName = args.user
+
     get_quote(args.user)
