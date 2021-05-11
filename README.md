@@ -7,5 +7,5 @@ A repo containing code which can be used to pull quotes from an API on a daily b
 
 :wrench:  Usage: 
 - We need to pass in the username of the Windows environment to our Python script using argparse because we want to save the pulled quote to an Excel file in our Windows environment
-- To achieve this, we will need to create a username credential in Jenkins and pass this in as an argument
+- To achieve this, we will need to create a username credential in Jenkins and pass this in as an argument in our JenkinsFile
 - After this is done, the repo can be forked, and the script can be run from the Jenkins environment
